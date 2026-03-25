@@ -1,0 +1,17 @@
+[
+  {
+    "task": "Extract AWS S3 bucket names from CloudFormation template URLs. The bucket names follow the pattern where they appear after 's3://' or 's3-' and before the first '/' or '-' respectively.",
+    "format": "regex",
+    "solution_criteria": "Must match valid S3 bucket names from URLs like 's3://my-bucket/path' or 'https://s3-my-bucket.amazonaws.com', capturing only the bucket name portion. Should handle both s3:// protocol and s3- prefix patterns."
+  },
+  {
+    "task": "Create an IAM policy document that allows read-only access to a specific S3 bucket and all objects within it.",
+    "format": "json",
+    "solution_criteria": "Must be a valid IAM policy with Version, Statement array, Effect set to 'Allow', appropriate Action permissions for read operations (s3:GetObject, s3:ListBucket), and Resource ARNs pointing to the bucket and its contents."
+  },
+  {
+    "task": "Write a function that takes an AWS ARN string and returns the service name from it.",
+    "format": "python",
+    "solution_criteria": "Function must parse ARN format 'arn:partition:service:region:account:resource' and return the service portion. Should handle standard AWS ARNs and return None or raise appropriate error for invalid ARN formats."
+  }
+]
